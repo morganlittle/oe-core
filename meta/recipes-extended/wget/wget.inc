@@ -4,7 +4,7 @@ LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://COPYING;md5=d32239bcb673463ab874e80d47fae504"
 DEPENDS = "openssl"
 
-INC_PR = "r14"
+INC_PR = "r15"
 
 inherit autotools gettext update-alternatives
 
@@ -14,7 +14,7 @@ do_install_append () {
 	mv ${D}${bindir}/wget ${D}${bindir}/wget.${BPN}
 }
 
-ALTERNATIVE_NAME = "wget"
-ALTERNATIVE_LINK = "${bindir}/wget"
-ALTERNATIVE_PATH = "${bindir}/wget.${BPN}"
+ALTERNATIVE_${PN} = "wget"
+ALTERNATIVE_LINK_NAME[wget] = "${bindir}/wget"
+ALTERNATIVE_TARGET[wget] = "${bindir}/wget.${BPN}"
 ALTERNATIVE_PRIORITY = "100"

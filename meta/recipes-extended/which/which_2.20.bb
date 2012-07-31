@@ -8,7 +8,7 @@ DEPENDS     = "cwautomacros-native"
 
 inherit autotools update-alternatives
 
-PR = "r2"
+PR = "r3"
 
 EXTRA_OECONF = "--disable-iberty"
 
@@ -27,6 +27,6 @@ do_install() {
 	mv ${D}${bindir}/which ${D}${bindir}/which.${BPN}
 }
 
-ALTERNATIVE_NAME = "which"
-ALTERNATIVE_PATH = "which.${BPN}"
+ALTERNATIVE_${PN} = "which"
+ALTERNATIVE_TARGET[which] = "${bindir}/which.${BPN}"
 ALTERNATIVE_PRIORITY = "100"

@@ -23,7 +23,7 @@ LICENSE = "GPLv3+ | BSD-2-Clause"
 LIC_FILES_CHKSUM = "file://COPYING;md5=d32239bcb673463ab874e80d47fae504 \
                     file://LICENSE;md5=1237c0f825bb36122b0b2b486ffbe6be"
 DEPENDS = "ncurses"
-PR = "r2"
+PR = "r3"
 
 SRC_URI = "http://www.greenwoodsoftware.com/${BPN}/${BPN}-${PV}.tar.gz"
 
@@ -37,6 +37,6 @@ do_install () {
         mv ${D}${bindir}/less ${D}${bindir}/less.${BPN}
 }
 
-ALTERNATIVE_NAME = "less"
-ALTERNATIVE_PATH = "less.${BPN}"
+ALTERNATIVE_${PN} = "less"
+ALTERNATIVE_TARGET[less] = "${bindir}/less.${BPN}"
 ALTERNATIVE_PRIORITY = "100"

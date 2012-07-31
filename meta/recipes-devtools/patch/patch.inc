@@ -13,6 +13,6 @@ do_install_append () {
         mv ${D}${bindir}/patch ${D}${bindir}/patch.${BPN}
 }
 
-ALTERNATIVE_NAME = "patch"
-ALTERNATIVE_PATH = "patch.${BPN}"
+ALTERNATIVE_${PN} = "patch"
+ALTERNATIVE_TARGET[patch] = "$[bindir}/patch.${BPN}"
 ALTERNATIVE_PRIORITY = "100"

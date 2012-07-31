@@ -4,7 +4,7 @@ LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://COPYING;md5=8f0e2cd40e05189ec81232da84bd6e1a"
 SRCREV = "12"
 PV = "0.0+r${SRCPV}"
-PR = "r5"
+PR = "r6"
 
 #RRECOMMENDS_${PN} = "acct"
 
@@ -17,9 +17,9 @@ S = "${WORKDIR}/trunk"
 
 inherit update-alternatives
 
-ALTERNATIVE_NAME = "init"
-ALTERNATIVE_LINK = "${base_sbindir}/init"
-ALTERNATIVE_PATH = "${base_sbindir}/ubootchartd"
+ALTERNATIVE_${PN} = "init"
+ALTERNATIVE_LINK_NAME[init] = "${base_sbindir}/init"
+ALTERNATIVE_TARGET[init] = "${base_sbindir}/ubootchartd"
 ALTERNATIVE_PRIORITY = "70"
 
 do_compile() {

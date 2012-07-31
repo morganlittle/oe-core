@@ -12,7 +12,7 @@ do_install_append () {
         mv ${D}${bindir}/time ${D}${bindir}/time.${BPN}
 }
 
-ALTERNATIVE_NAME = "time"
-ALTERNATIVE_LINK = "${bindir}/time"
-ALTERNATIVE_PATH = "${bindir}/time.${BPN}"
+ALTERNATIVE_${PN} = "time"
+ALTERNATIVE_LINK_NAME[time] = "${bindir}/time"
+ALTERNATIVE_TARGET[time] = "${bindir}/time.${BPN}"
 ALTERNATIVE_PRIORITY = "100"
